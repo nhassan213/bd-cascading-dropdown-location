@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="js/bd-location.js"></script>
+
+</head>   
+<body>
+
+<div class="container">
+<h1>Cascading Dropdown Location of Bangladesh</h1>
+<h3>Create Form</h3>
+  <form name="" id="" action="" method="">
+  <!-- This hidden input field is necessary for the js file. -->
+  <input type="hidden" id="form_type" value="CREATE">
+  <!-- Value = "CREATE" for create form and value = "EDIT" for edit form. -->
+  <label>Division:</label>
+  <select class="form-select" name="division" id="division">
+      <option selected="selected" name="division" 
+      >Please select division</option>
+  </select>
+  <br><br>
+  <label>District:</label>
+  <select name="district" id="district">
+      <option selected="selected">Please select district</option>
+  </select>
+    <br><br>
+  <label>Upazila:</label>
+  <select name="upazila" id="upazila">
+      <option selected="selected">Please select upazila</option>
+  </select>
+    <br><br>
+    <input type="submit" value="Submit">  
+  </form>
+</div>
+</body>
+</html>
