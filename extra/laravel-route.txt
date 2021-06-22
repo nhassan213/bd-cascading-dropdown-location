@@ -1,0 +1,21 @@
+Route::get('/test', function() {
+
+    $divisions = DB::table('locations')->select('division')->groupBy('division')->get();
+    // echo $locations;
+    foreach ($divisions as $division) {
+    	$districts = DB::table('locations')->select('division','district')->where('division',$division->division)->groupBy('division','district')->get();
+    	echo "&quot;".$division->division."&quot;:{";
+    	foreach ($districts as $district) {
+    		$upazilas = DB::table('locations')->select('division','district','upazila')->where('district',$district->district)->groupBy('division','district','upazila')->get();
+    		echo "&quot;".$district->district."&quot;:[";
+    		foreach ($upazilas as $upazila) {
+    			echo "&quot;".$upazila->upazila."&quot;,";
+    		}
+    		echo "],";
+    		
+    	}
+    	echo "},";
+    	
+    }
+
+});
